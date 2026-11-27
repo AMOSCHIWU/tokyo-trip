@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 東京＆近郊 7日家族秋楓聖誕手冊</title>
+<title>2026 東京・鎌倉・橫濱 8日遊｜東京鐵塔・淺草寺・明治神宮・高尾山全攻略</title>
 <style>
-  /* 和風秋冬暖色調設計系統 */
   :root {
     --bg: #F9F8F6;
     --card: #FFFFFF;
@@ -17,189 +16,112 @@
     --gold-soft: #FCF8EE;
     --green: #3A6B56;
     --green-soft: #EFF6F3;
+    --blue: #2A5B84;
+    --blue-soft: #EFF5FA;
     --border: #E8E2DA;
   }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.65;
-    padding-bottom: 64px;
-    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
   }
-
-  /* 頁首總覽橫幅 */
   header {
     background: linear-gradient(135deg, #2B2623 0%, #4A352F 100%);
-    color: #FFFFFF;
-    padding: 28px 18px 22px;
+    color: #fff;
+    padding: 26px 18px 20px;
     text-align: center;
     border-bottom: 4px solid var(--accent);
   }
-
-  header h1 {
-    font-size: clamp(1.3rem, 3.8vw, 1.65rem);
-    letter-spacing: 0.8px;
-    margin-bottom: 6px;
-  }
-
-  header p {
-    font-size: 0.9rem;
-    color: #E2D9D2;
-  }
-
-  .badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  header h1 { font-size: 1.45rem; letter-spacing: 1px; margin-bottom: 6px; }
+  header p { font-size: 0.9rem; color: #E2D9D2; }
+  .flight-strip {
+    max-width: 820px;
+    margin: 12px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 8px;
-    margin-top: 12px;
+    text-align: left;
   }
-
-  .badge {
-    background: rgba(255, 255, 255, 0.14);
-    padding: 4px 11px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-  }
-
-  .hotel-bar {
-    margin-top: 12px;
-  }
-
-  .hotel-link {
-    display: inline-block;
-    background: rgba(194, 142, 54, 0.25);
-    color: #FCE8B2;
-    border: 1px solid rgba(194, 142, 54, 0.55);
-    padding: 5px 14px;
-    border-radius: 20px;
+  .flight-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 8px 12px;
     font-size: 0.8rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s;
+    line-height: 1.5;
   }
-
-  .hotel-link:hover {
-    background: rgba(194, 142, 54, 0.45);
-  }
-
-  /* 頂部黏性分頁導覽列 */
+  .flight-card strong { color: #FFD993; display: block; margin-bottom: 2px; }
   nav {
     position: sticky;
     top: 0;
     z-index: 99;
-    background: rgba(249, 248, 246, 0.96);
+    background: rgba(249,248,246,0.96);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
     padding: 10px 12px;
     display: flex;
     overflow-x: auto;
     gap: 8px;
-    scrollbar-width: none;
   }
-
-  nav::-webkit-scrollbar {
-    display: none;
-  }
-
   nav button {
     flex: 0 0 auto;
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--ink);
-    padding: 8px 14px;
+    padding: 7px 14px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
   }
-
-  nav button:hover {
-    border-color: var(--accent);
-  }
-
   nav button.active {
     background: var(--accent);
-    color: #FFFFFF;
+    color: #fff;
     border-color: var(--accent);
-    box-shadow: 0 2px 6px rgba(184, 74, 57, 0.25);
   }
-
-  /* 主要內容容器 */
-  main {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 18px 16px;
-  }
-
-  .section {
-    display: none;
-  }
-
-  .section.active {
-    display: block;
-    animation: fadeIn 0.25s ease;
-  }
-
+  main { max-width: 860px; margin: 0 auto; padding: 18px 16px; }
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.25s ease; }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  /* 卡片與時間軸 */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 18px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(43, 38, 35, 0.04);
+    box-shadow: 0 2px 8px rgba(43,38,35,0.04);
   }
-
   .card h2 {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     color: var(--accent);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 8px;
   }
-
-  .card h3 {
-    font-size: 1rem;
-    margin: 16px 0 8px;
-    color: var(--ink);
-  }
-
+  .card h3 { font-size: 0.98rem; margin: 14px 0 6px; color: var(--ink); }
   .time-item {
     position: relative;
     padding-left: 72px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     border-left: 2px solid var(--border);
     margin-left: 28px;
   }
-
-  .time-item:last-child {
-    margin-bottom: 4px;
-  }
-
   .time-tag {
     position: absolute;
     left: -30px;
     top: 0;
     background: var(--ink);
-    color: #FFFFFF;
+    color: #fff;
     font-size: 0.78rem;
     font-weight: 700;
     padding: 2px 8px;
@@ -207,49 +129,27 @@
     width: 56px;
     text-align: center;
   }
-
   .time-tag.food { background: var(--accent); }
   .time-tag.shop { background: var(--gold); }
   .time-tag.alert { background: #B00020; }
-
-  .title-line {
-    font-weight: 700;
-    font-size: 0.98rem;
-    margin-bottom: 4px;
-    color: var(--ink);
-  }
-
-  .desc {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-
+  .time-tag.tax { background: var(--blue); }
+  .title-line { font-weight: 700; font-size: 0.98rem; margin-bottom: 4px; }
+  .desc { font-size: 0.9rem; color: var(--muted); }
   .pill {
     display: inline-block;
     font-size: 0.78rem;
-    padding: 2px 9px;
+    padding: 2px 8px;
     border-radius: 6px;
     margin-right: 4px;
-    margin-top: 6px;
+    margin-top: 4px;
     font-weight: 600;
   }
-
   .pill.food { background: var(--accent-soft); color: var(--accent); }
   .pill.shop { background: var(--gold-soft); color: #8F6319; }
   .pill.info { background: var(--green-soft); color: var(--green); }
-
-  ul.clean {
-    padding-left: 18px;
-    margin-top: 6px;
-    font-size: 0.9rem;
-    color: var(--ink);
-  }
-
-  ul.clean li {
-    margin-bottom: 5px;
-  }
-
-  /* 提示與警戒區塊 */
+  .pill.tax { background: var(--blue-soft); color: var(--blue); }
+  ul.clean { padding-left: 18px; margin-top: 6px; font-size: 0.9rem; color: var(--ink); }
+  ul.clean li { margin-bottom: 5px; }
   .alert-box {
     background: #FFF3F3;
     border-left: 4px solid #C62828;
@@ -257,9 +157,7 @@
     border-radius: 8px;
     margin: 10px 0;
     font-size: 0.9rem;
-    color: #3B1212;
   }
-
   .tip-box {
     background: var(--gold-soft);
     border-left: 4px solid var(--gold);
@@ -268,114 +166,92 @@
     margin: 10px 0;
     font-size: 0.9rem;
   }
-
   .ticket-box {
     background: var(--green-soft);
     border-left: 4px solid var(--green);
     padding: 12px 14px;
     border-radius: 8px;
     margin: 10px 0;
-    font-size: 0.89rem;
+    font-size: 0.88rem;
   }
-
-  /* Google Maps 一鍵導航按鈕 */
-  .map-btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
+  .tax-box {
+    background: var(--blue-soft);
+    border-left: 4px solid var(--blue);
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 0.9rem;
   }
-
   .map-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 4px;
     font-size: 0.8rem;
     color: var(--green);
     background: var(--green-soft);
-    border: 1px solid rgba(58, 107, 86, 0.25);
-    padding: 4px 11px;
-    border-radius: 14px;
+    padding: 3px 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.18s ease;
   }
-
-  .map-btn:hover {
-    background: var(--green);
-    color: #FFFFFF;
-  }
-
-  /* 品牌與抹茶推薦網格 */
   .brand-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 12px;
     margin-top: 10px;
   }
-
   .brand-item {
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 12px;
     background: #FCFBF9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
-
-  .brand-item strong {
-    color: var(--accent);
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.94rem;
+  .brand-item strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 0.94rem; }
+  .brand-item span { font-size: 0.84rem; color: var(--muted); display: block; }
+  .platform-badge {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-bottom: 6px;
   }
-
-  .brand-item span {
-    font-size: 0.84rem;
-    color: var(--muted);
-    display: block;
-  }
-
-  @media (max-width: 540px) {
-    .time-item {
-      padding-left: 14px;
-      margin-left: 6px;
-    }
-    .time-tag {
-      position: static;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-  }
+  .platform-badge.gb { background: #E3F2FD; color: #1565C0; }
+  .platform-badge.jj { background: #E8F5E9; color: #2E7D32; }
+  .platform-badge.other { background: #FFF8E1; color: #EF6C00; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🍁 2026 東京・鎌倉・橫濱 7日家族秋楓聖誕手冊</h1>
-  <p>11/29 (日) – 12/05 (六) ｜ 全程連續入住 6 晚日本橋</p>
-  <div class="badge-row">
-    <span class="badge">🍽️ 每日先吃早餐再逛景點</span>
-    <span class="badge">👨 爸爸 11/30 14:20 抵達・12/4 15:40 返台</span>
-    <span class="badge">👩🏻 媽媽＆你 12/5 15:20 返台</span>
-  </div>
-  <div class="hotel-bar">
-    <a class="hotel-link" href="https://www.google.com/maps/search/?api=1&query=AIMA+Nihonbashi" target="_blank" rel="noopener">
-      🏨 住宿基地：AIMA Nihonbashi（日本橋）一鍵導航 ↗
-    </a>
+  <h1>🍁 2026 東京・鎌倉・橫濱 8日遊｜直擊東京鐵塔・淺草寺・明治神宮・高尾山</h1>
+  <p>秋楓銀杏・鎌倉古都＆橫濱聖誕市集家族全攻略</p>
+  <p style="font-size: 0.82rem; color: #CFC4BC; margin-top: 4px;">11/29 (日) – 12/06 (日) ｜ 住宿：AIMA Nihonbashi（日本橋）</p>
+  <div class="flight-strip">
+    <div class="flight-card">
+      <strong>👩🏻👦🏻 母子航班（國泰航空 Cathay Pacific）</strong>
+      去程：11/29 (日) CX450｜12:50 TPE T1 ➔ 16:50 NRT T2<br>
+      回程：12/06 (日) CX451｜15:30 NRT T2 ➔ 18:35 TPE T1
+    </div>
+    <div class="flight-card">
+      <strong>👨 爸爸航班（星宇航空 STARLUX・代號 EUKSAM）</strong>
+      去程：11/30 (一) JX802｜10:10 TPE T1 ➔ 14:20 NRT T2（商務艙）<br>
+      回程：12/04 (五) JX803｜15:40 NRT T2 ➔ 18:45 TPE T1（商務艙）
+    </div>
   </div>
 </header>
 
-<nav id="navBar" aria-label="行程分頁導覽列">
+<nav id="navBar" aria-label="行程分頁導覽">
   <button type="button" class="active" onclick="showTab('d1', this)">11/29 D1 抵達神田</button>
   <button type="button" onclick="showTab('d2', this)">11/30 D2 芝公園＆東京車站</button>
   <button type="button" onclick="showTab('d3', this)">12/01 D3 高尾山＆澀谷</button>
-  <button type="button" onclick="showTab('d4', this)">12/02 D4 外苑銀杏＆入鹿</button>
+  <button type="button" onclick="showTab('d4', this)">12/02 D4 外苑銀杏＆明治神宮</button>
   <button type="button" onclick="showTab('d5', this)">12/03 D5 鎌倉＆橫濱</button>
   <button type="button" onclick="showTab('d6', this)">12/04 D6 淺草＆父返台</button>
-  <button type="button" onclick="showTab('d7', this)">12/05 D7 返台日</button>
+  <button type="button" onclick="showTab('d7', this)">12/05 D7 市場＆市區採買</button>
+  <button type="button" onclick="showTab('d8', this)">12/06 D8 清澄白河＆返台</button>
   <button type="button" onclick="showTab('shop', this)">🛍️ 必買品牌＆抹茶</button>
+  <button type="button" onclick="showTab('tax', this)">🛂 2026退稅攻略</button>
 </nav>
 
 <main>
@@ -383,44 +259,31 @@
 <!-- DAY 1 -->
 <section id="d1" class="section active">
   <div class="card">
-    <h2>Day 1｜11/29 (週日) 抵達日本橋・神田平價晚餐與超近超市</h2>
-
+    <h2>Day 1｜11/29 (週日) 母子抵達日本橋・黑毛和牛壽喜燒＆日本橋本町超市</h2>
     <div class="time-item">
-      <span class="time-tag">18:30</span>
-      <div class="title-line">入住 AIMA Nihonbashi（日本橋）</div>
-      <div class="desc">你與媽媽先抵達成田機場，搭乘京成電鐵 Access 特急直通都營淺草線日本橋站進市區。放好行李稍作休息後，步行約 5～7 分鐘前往熱鬧的神田站南口生活圈覓食。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=AIMA+Nihonbashi" target="_blank" rel="noopener">📍 AIMA Nihonbashi</a>
-      </div>
+      <span class="time-tag">16:50</span>
+      <div class="title-line">國泰航空 CX450 抵達成田機場第 2 航廈（NRT T2）</div>
+      <div class="desc">入境領取行李後，搭乘成田 Sky Access 線 / Access 特急直通都營淺草線（免轉車直達日本橋站），約 <strong>18:30</strong> 入住 <strong>AIMA Nihonbashi</strong>。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=AIMA+Nihonbashi" target="_blank" rel="noopener noreferrer">📍 AIMA Nihonbashi</a>
     </div>
-
     <div class="time-item">
       <span class="time-tag food">19:30</span>
-      <div class="title-line">晚餐：神田站南口平價居酒屋 3 選 1（步行 5～7 分鐘）</div>
-      <div class="desc">專心享用神田在地高 CP 值日式串燒與家常料理：</div>
+      <div class="title-line">晚餐首選：黑毛和牛壽喜燒 日本橋一里（附班機延誤備案）</div>
       <ul class="clean">
-        <li><strong>鳥貴族 神田南口店</strong>：全品項均一價串燒，提供中文圖片平板點餐，帶媽媽點菜輕鬆無壓力。</li>
-        <li><strong>串屋橫丁 神田南口店</strong>：炭火現烤豚肉串燒與爽脆高麗菜、下酒小菜，氣氛熱鬧道地。</li>
-        <li><strong>大衆酒場 ぎんぶた 神田店</strong>：高 CP 值日式家常料理與烤物，適合與媽媽輕鬆小酌。</li>
+        <li><strong>【首選】黑毛和牛壽喜燒 日本橋一里（日本橋本町 1 丁目）</strong>：週日營業至 <strong>21:00</strong>，高 CP 值黑毛和牛壽喜燒定食（若入境與搭車順利，建議 <strong>20:00 前抵達</strong>最保險）。</li>
+        <li><strong>【備案 1】紅炎 東京八重洲店（日本橋 3 丁目 B1）</strong>：週日營業至 <strong>24:00</strong>，若航班或海關排隊耽擱可改吃這家。</li>
+        <li><strong>【備案 2】Nobunaga Ramen Restaurant（日本橋茅場町）</strong>：週日營業至凌晨 <strong>03:00</strong>，想快速吃碗熱拉麵最彈性。</li>
       </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=鳥貴族+神田南口店" target="_blank" rel="noopener">📍 鳥貴族 神田南口店</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=串屋横丁+神田南口店" target="_blank" rel="noopener">📍 串屋橫丁 神田南口店</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=大衆酒場+ぎんぶた+神田店" target="_blank" rel="noopener">📍 大衆酒場 ぎんぶた</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=黒毛和牛すき焼き+日本橋一里" target="_blank" rel="noopener noreferrer">📍 黑毛和牛壽喜燒 日本橋一里</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=紅炎+東京八重洲店" target="_blank" rel="noopener noreferrer">📍 紅炎 東京八重洲店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Nobunaga+Ramen+Restaurant+Nihonbashi" target="_blank" rel="noopener noreferrer">📍 Nobunaga Ramen</a>
     </div>
-
     <div class="time-item">
       <span class="time-tag shop">21:00</span>
-      <div class="title-line">飯店旁超近超市採買（步行 5～9 分鐘）</div>
-      <ul class="clean">
-        <li><strong>肉のハナマサ 神田店（步行僅 5 分鐘 / 300m）</strong>：就在神田晚餐同一條街上，營業至 <strong>22:00</strong>，水果、鮮奶、優格、零食飲料齊全且價格實惠。</li>
-        <li><strong>まいばすけっと 神田駅北口店（步行 9 分鐘 / 600m）</strong>：營業至 <strong>24:00（午夜）</strong>，若晚餐較晚可買熟食便當與隔日早餐。</li>
-      </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=肉のハナマサ+神田店" target="_blank" rel="noopener">📍 肉のハナマサ 神田店</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=まいばすけっと+神田駅北口店" target="_blank" rel="noopener">📍 まいばすけっと 神田駅北口店</a>
-      </div>
+      <div class="title-line">飯後順路超市：Maruetsu petit Nihonbashihoncho（マルエツ プチ 日本橋本町店）</div>
+      <div class="desc">就在日本橋一里步行順路範圍內，週日營業至 <strong>23:00</strong>，時間非常充裕，可從容採買水果、優格、飲料與隔天早餐（備案：若住人形町側亦可逛 <strong>Maruetsu Petit 人形町站前店</strong>，同樣營業至 23:00）。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Maruetsu+petit+Nihonbashihoncho" target="_blank" rel="noopener noreferrer">📍 Maruetsu petit Nihonbashihoncho</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=マルエツ+プチ+人形町駅前店" target="_blank" rel="noopener noreferrer">📍 Maruetsu Petit 人形町站前店</a>
     </div>
   </div>
 </section>
@@ -428,67 +291,83 @@
 <!-- DAY 2 -->
 <section id="d2" class="section">
   <div class="card">
-    <h2>Day 2｜11/30 (週一) 芝公園早午餐賞楓 ➔ 虎之門＆麻布台 ➔ 大丸砂糖樹＆聖誕市集</h2>
-
+    <h2>Day 2｜11/30 (週一) 09:30 出發 ➔ 芝公園早午餐賞楓 ➔ 虎之門＆麻布台 ➔ 大丸伴手禮＆聖誕市集</h2>
     <div class="time-item">
-      <span class="time-tag food">08:30</span>
-      <div class="title-line">早餐：Le Pain Quotidien 芝公園店（07:30 營業）</div>
-      <div class="desc">搭都營三田線至御成門站 A6 出口，先吃歐風有機早午餐，戶外露台與靠窗區可遠眺東京鐵塔。</div>
+      <span class="time-tag">09:30</span>
+      <div class="title-line">從日本橋飯店悠閒出門（搭都營三田線至御成門站 A6 出口）</div>
+      <div class="desc">約 10:00 抵達芝公園，先享用歐風有機早午餐。</div>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">10:00</span>
+      <div class="title-line">早午餐：Le Pain Quotidien 芝公園店（07:30 營業）</div>
+      <div class="desc">露台可遠眺東京鐵塔，慢慢享用現烤麵包與熱飲。</div>
       <span class="pill food">必點：班尼迪克蛋</span>
       <span class="pill food">現烤可頌＆巧克力可頌</span>
       <span class="pill food">米粉鮮奶油泡芙＋熱抹茶拿鐵</span>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Le+Pain+Quotidien+Shiba+Park" target="_blank" rel="noopener">📍 Le Pain Quotidien 芝公園店</a>
-      </div>
+      <br><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Le+Pain+Quotidien+Shiba+Park" target="_blank" rel="noopener noreferrer">📍 Le Pain Quotidien 芝公園店</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag">10:00</span>
+      <span class="time-tag">11:15</span>
       <div class="title-line">芝公園四號地 ＆ 紅葉谷賞楓拍東京鐵塔</div>
-      <div class="desc">餐廳步行僅 <strong>6 分鐘（400m）</strong> 即達芝公園四號出口步道，欣賞火紅楓葉與金黃銀杏同框東京鐵塔。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shiba+Park+Area+4" target="_blank" rel="noopener">📍 芝公園四號地</a>
-      </div>
+      <div class="desc">餐廳步行僅 6 分鐘（400m）即達芝公園四號出口步道，欣賞紅葉與銀杏同框東京鐵塔。</div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag shop">11:30</span>
-      <div class="title-line">順路逛街第一站：虎之門之丘（Toranomon Hills）</div>
-      <div class="desc">從芝公園往西北散步約 15 分鐘即達。推薦必逛 <strong>SELECT by BAYCREW'S</strong>（2F–3F 大型選物旗艦店）、<strong>BEAMS / 中川政七商店</strong> 與 B2 <strong>T-MARKET</strong> 美食廣場。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Toranomon+Hills+Station+Tower" target="_blank" rel="noopener">📍 虎之門之丘</a>
-      </div>
+      <span class="time-tag shop">12:15</span>
+      <div class="title-line">順路逛街第一站：麻布台之丘（Azabudai Hills）</div>
+      <div class="desc">從芝公園往西散步約 15 分鐘即達。館內必買 <strong>ÉCHIRÉ 艾許奶油、鈴懸和菓子、中村藤吉抹茶</strong> 與 <strong>Le Labo / Byredo / DIPTYQUE</strong> 免稅香氛。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank" rel="noopener noreferrer">📍 麻布台之丘</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=中村藤吉本店+麻布台" target="_blank" rel="noopener noreferrer">📍 中村藤吉本店 麻布台</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag shop">13:30</span>
-      <div class="title-line">順路逛街第二站：麻布台之丘（Azabudai Hills）</div>
-      <div class="desc">從虎之門之丘步行約 12 分鐘即達。館內必買 <strong>ÉCHIRÉ 艾許奶油、鈴懸和菓子、中村藤吉抹茶、% Arabica</strong> 與 <strong>Le Labo / Byredo / DIPTYQUE</strong> 免稅香氛（詳細清單見「🛍️ 必買品牌＆抹茶」分頁）。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank" rel="noopener">📍 麻布台之丘</a>
-      </div>
+      <span class="time-tag shop">14:00</span>
+      <div class="title-line">順路逛街第二站：虎之門之丘（Toranomon Hills）</div>
+      <div class="desc">從麻布台之丘往東北步行約 12 分鐘即達（爸爸 14:20 JX802 抵達成田 T2 後直接前往東京車站會合）。必逛 <strong>SELECT by BAYCREW'S</strong>（2F–3F 旗艦選物店）、<strong>BEAMS / 中川政七商店</strong> 與 B2 <strong>T-MARKET</strong> 美食廣場。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Toranomon+Hills" target="_blank" rel="noopener noreferrer">📍 虎之門之丘</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag shop">16:00</span>
-      <div class="title-line">與爸爸會合 ➔ 大丸東京店 1F「砂糖樹 Sugar Butter Tree」</div>
-      <div class="desc">爸爸 14:20 抵達成田機場搭車進市區會合。前往東京車站八重洲北口出站即達的 <strong>砂糖樹 Sugar Butter Tree 大丸東京店（1F 伴手禮樓層）</strong>，每日營業時間 <strong>10:00–20:00</strong>，品項最齊全，未稅滿 <strong>5,000 日圓</strong> 憑實體護照可辦理退稅！</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Daimaru+Tokyo" target="_blank" rel="noopener">📍 大丸東京店 1F</a>
-      </div>
-    </div>
-
-    <div class="time-item">
-      <span class="time-tag food">17:30</span>
-      <div class="title-line">東京車站聖誕市集 ＆ 晚餐備案「迴轉壽司 根室花丸（KITTE 丸之內店 5F）」</div>
+      <span class="time-tag shop">16:15</span>
+      <div class="title-line">與爸爸會合 ➔ 東京車站伴手禮採買（大丸東京 1F ＆ 東京站一番街 / KITTE）</div>
+      <div class="desc">東京車站八重洲北口與丸之內南口周邊（大丸東京店 <strong>10:00–20:00</strong>；東京站一番街 TOKYO GIFT PALETTE 平日 <strong>09:30–20:30</strong>；KITTE 丸之內 1F <strong>10:00–21:00</strong>，未稅滿 5,000 日圓憑實體護照登記免稅）：</div>
       <ul class="clean">
-        <li><strong>聖誕市集必吃必買</strong>：德式熱紅酒（附年度限定紀念馬克杯可收藏）、現烤德國香腸拼盤、史多倫聖誕麵包（Stollen）、德國手工胡桃鉗與木製聖誕吊飾。</li>
-        <li><strong>晚餐備案：迴轉壽司 根室花丸（KITTE 丸之內店 5F）</strong>：就在東京車站丸之內南口正對面！建議 <strong>16:30–17:00 先上 5 樓抽號碼牌</strong>（掃 QR Code 用手機看叫號進度），再去樓下逛聖誕市集拍丸之內燈飾，叫號再上樓大啖北海道干貝、牡丹蝦與炙燒比目魚緣側！</li>
+        <li><strong>砂糖樹 Sugar Butter Tree（大丸東京店 1F）</strong>：品項最齊全，必買白巧克力夾心脆餅與季節限定口味。</li>
+        <li><strong>銀座あけぼの（Ginza Akebono・大丸東京店 1F）</strong>：創立於銀座的老字號和菓子名店，秋季限定栗子系列與人氣海苔點心必買：
+          <br>① <strong>海苔貝貝（海苔チーズサンド / 海苔巻）</strong>：酥脆海苔包裹濃郁起司夾心與米果的招牌鹹香點心，超涮嘴！
+          <br>② <strong>大納言栗蒸し羊羹（¥777）</strong>：鋪滿整顆飽滿栗子與大納言紅豆的蒸羊羹，口感 Q 彈不甜膩（最推薦！）。
+          <br>③ <strong>栗もなか（栗子最中・¥280）</strong>：可愛栗子造型酥脆餅殼包入香濃栗子餡。
+          <br>④ <strong>栗どらやき / もちどら（栗子銅鑼燒 / 麻糬銅鑼燒）</strong>、<strong>白玉豆大福</strong> 與多口味綜合米果 <strong>「それぞれ」</strong>。
+        </li>
+        <li><strong>BRULEE MERIZE（布蕾梅利茲・東京站一番街「TOKYO GIFT PALETTE」1F，八重洲北口出站即達）</strong>：東京車站超人氣巴黎風焦糖布蕾專門店，必買招牌<strong>焦糖布蕾塔（ブリュレクリームタルト）</strong>、<strong>布蕾千層酥</strong>與<strong>布蕾費南雪</strong>。</li>
+        <li><strong>RURU MARY'S（ルル メリー・KITTE 丸之內 1F，就在根室花丸同棟 1 樓）</strong>：日本老牌 Mary's 旗下復古藍色緞帶玫瑰包裝巧克力名店，必買<strong>75% 濃郁巧克力方形蛋糕（ショコラテリーヌ）</strong>、<strong>巧克力千層酥</strong>與花繪禮盒。</li>
       </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Marunouchi+Naka-dori" target="_blank" rel="noopener">📍 東京車站丸之內仲通</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+KITTE+Marunouchi" target="_blank" rel="noopener">📍 根室花丸 KITTE 5F</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Daimaru+Tokyo" target="_blank" rel="noopener noreferrer">📍 大丸東京店 1F</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=BRULEE+MERIZE+東京ギフトパレット店" target="_blank" rel="noopener noreferrer">📍 BRULEE MERIZE 東京站</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=RURU+MARY'S+KITTE丸の内" target="_blank" rel="noopener noreferrer">📍 RURU MARY'S KITTE</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">17:45</span>
+      <div class="title-line">東京車站聖誕市集 ＆ 晚餐備案「根室花丸（KITTE 5F）」</div>
+      <ul class="clean">
+        <li><strong>聖誕市集必吃必買</strong>：德式熱紅酒（附年度限定紀念馬克杯）、現烤德國香腸拼盤、史多倫聖誕麵包（Stollen）與木製聖誕吊飾。</li>
+        <li><strong>晚餐備案：迴轉壽司 根室花丸（KITTE 丸之內店 5F）</strong>：建議 <strong>17:00 先上 5 樓抽號碼牌</strong>（掃 QR Code 手機看叫號，順便逛 1 樓 RURU MARY'S），再去逛聖誕市集拍丸之內燈飾，叫號再上樓大啖北海道干貝、牡丹蝦與炙燒比目魚緣側！</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+KITTE+Marunouchi" target="_blank" rel="noopener noreferrer">📍 根室花丸 KITTE 丸之內店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=東京車站一番街" target="_blank" rel="noopener noreferrer">📍 東京車站一番街</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=丸之內聖誕市集" target="_blank" rel="noopener noreferrer">📍 丸之內聖誕市集</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag shop">20:30</span>
+      <div class="title-line">20:00–21:00 逛完東京車站後：夜間燈飾 ＆ 順路精品超市（營業至 22:00–23:00）</div>
+      <ul class="clean">
+        <li><strong>丸之內仲通聖誕燈飾（點燈至 23:00）</strong>：市集小屋約 21:00 打烊，但 1.2 公里香檳金燈海與主題聖誕樹會一路亮到 23:00，20:00 後人潮變少更適合拍照。</li>
+        <li><strong>成城石井 新丸大樓店（B1，營業至 22:00）</strong>：就在聖誕市集旁，自製起司蛋糕、進口水果、和牛熟食便當與清酒果實酒種類超齊全。</li>
+        <li><strong>紀ノ國屋（KINOKUNIYA entree）Gransta 丸之內店（營業至 22:00）</strong>：東京車站丸之內地下北口改札外，可買招牌帆布購物袋與限定點心。</li>
+        <li><strong>Maruetsu petit Nihonbashihoncho（營業至 23:00）</strong>：散步回日本橋飯店順路採買牛奶、優格與隔天早餐最平價實惠。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=成城石井+新丸ビル店" target="_blank" rel="noopener noreferrer">📍 成城石井 新丸大樓店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=紀ノ國屋+グランスタ丸の内店" target="_blank" rel="noopener noreferrer">📍 紀ノ國屋 Gransta丸之內</a>
+    </div>
+    <div class="tip-box">
+      <strong>🎫 明日提醒：</strong>12/01 早上在京王線新宿站售票機購買「高尾山套票（高尾山きっぷ，約 ¥1,480/人）」，現省約 ¥320/人（含新宿⇄高尾山口京王線來回車票＋吊椅／纜車來回票，限當日來回使用）。
     </div>
   </div>
 </section>
@@ -496,80 +375,85 @@
 <!-- DAY 3 -->
 <section id="d3" class="section">
   <div class="card">
-    <h2>Day 3｜12/01 (週二) 08:30 出發 ➔ 新宿轉乘早餐 ➔ 高尾山（吊椅上・纜車下）➔ 下午澀谷逛街</h2>
-
+    <h2>Day 3｜12/01 (週二) 09:30 出發 ➔ 新宿早午餐 ➔ 高尾山賞楓＆午餐 ➔ 澀谷逛街</h2>
     <div class="time-item">
-      <span class="time-tag">08:30</span>
-      <div class="title-line">從日本橋飯店準時出門（往高尾山口總車程約 1.5 小時）</div>
-      <div class="desc">搭地鐵都營新宿線（小川町站）或 JR 中央線（神田站）前往新宿站，車程約 <strong>20–25 分鐘</strong>。</div>
+      <span class="time-tag">09:30</span>
+      <div class="title-line">從日本橋飯店從容出門（往新宿車程約 20～25 分鐘）</div>
+      <div class="desc">搭地鐵都營新宿線（小川町站）或 JR 中央線（神田站）前往新宿站。</div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag food">09:00</span>
-      <div class="title-line">早餐：新宿站轉乘京王線周邊早午餐（步行 2～5 分鐘內）</div>
+      <span class="time-tag food">10:00</span>
+      <div class="title-line">早午餐：新宿站轉乘京王線周邊咖啡早午餐（步行 2～5 分鐘內）</div>
       <ul class="clean">
-        <li><strong>RITUEL CAFE ルミネ新宿店（LUMINE 1 B2）</strong>：<strong>09:00 開門</strong>，距京王線 3 分鐘，巴黎法式可頌與班尼迪克蛋。</li>
-        <li><strong>TULLY'S COFFEE 新宿L塔店（西口地下道直結）</strong>：<strong>07:30 營業</strong>，座位寬敞好找。</li>
-        <li><strong>OSLO COFFEE 小田急エース店</strong>：<strong>08:00 營業</strong>，距京王線僅 2 分鐘，北歐起司火腿吐司與手沖咖啡。</li>
-        <li><strong>星巴克 京王新宿三丁目大樓店</strong>：<strong>07:00 營業</strong>，都營新宿線出站即達。</li>
+        <li><strong>RITUEL CAFE ルミネ新宿店（LUMINE 1 B2）</strong>：09:00 營業，距京王線 3 分鐘，巴黎法式可頌與班尼迪克蛋。</li>
+        <li><strong>TULLY'S COFFEE 新宿L塔店（西口地下道直結）</strong>：07:30 營業，座位寬敞好找。</li>
+        <li><strong>OSLO COFFEE 小田急エース店</strong>：08:00 營業，距京王線僅 2 分鐘，北歐起司火腿吐司與手沖咖啡。</li>
+        <li><strong>星巴克 京王新宿三丁目大樓店</strong>：07:00 營業，都營新宿線出站即達。</li>
       </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=RITUEL+CAFE+ルミネ新宿店" target="_blank" rel="noopener">📍 RITUEL CAFE</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=OSLO+COFFEE+小田急エース" target="_blank" rel="noopener">📍 OSLO COFFEE</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=TULLY'S+COFFEE+新宿L塔店" target="_blank" rel="noopener">📍 TULLY'S 新宿L塔</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=RITUEL+CAFE+ルミネ新宿店" target="_blank" rel="noopener noreferrer">📍 RITUEL CAFE ルミネ新宿店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=TULLY'S+COFFEE+新宿L塔店" target="_blank" rel="noopener noreferrer">📍 TULLY'S COFFEE 新宿L塔店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=OSLO+COFFEE+小田急エース店" target="_blank" rel="noopener noreferrer">📍 OSLO COFFEE 小田急エース店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=スターバックス+京王新宿三丁目ビル店" target="_blank" rel="noopener noreferrer">📍 星巴克 京王新宿三丁目大樓店</a>
     </div>
-
-    <div class="time-item">
-      <span class="time-tag">09:50</span>
-      <div class="title-line">搭乘京王線準特急前往「高尾山口站」（車程約 50 分鐘）</div>
-      <div class="desc">約 <strong>10:40</strong> 抵達高尾山口站，出站步行約 5 分鐘至山麓乘車處。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Takaosanguchi+Station" target="_blank" rel="noopener">📍 高尾山口站</a>
-      </div>
-    </div>
-
     <div class="time-item">
       <span class="time-tag">10:50</span>
-      <div class="title-line">高尾山賞楓：去程搭「雙人吊椅」上半山腰 ➔ 爬上山頂 ➔ 回程搭「纜車」下山</div>
-      <div class="desc">預留約 3.5～4 小時悠閒賞楓、參拜藥王院與攻頂（下山可順買現烤天狗燒）。</div>
+      <div class="title-line">購買高尾山套票 ➔ 搭京王線準特急前往「高尾山口站」（約 11:40 抵達）</div>
+      <div class="desc">出站步行約 5 分鐘至山麓乘車處，去程搭 <strong>雙人吊椅</strong> 上半山腰 ➔ 爬上山頂 ➔ 回程搭 <strong>纜車</strong> 下山。</div>
       <div class="ticket-box">
-        <strong>🎫 票價與混搭買票攻略（吊椅與纜車票價完全相同、可自由混搭！）：</strong>
+        <strong>🎫 高尾山套票（高尾山きっぷ）＆混搭搭乘攻略（現省約 ¥320／人！）：</strong>
         <ul class="clean">
-          <li><strong>票價</strong>：成人 <strong>來回票 950 日圓</strong>（單程 <strong>490 日圓</strong>，買來回票最划算且直接通用）。</li>
-          <li><strong>怎麼買票與搭乘</strong>：在山麓售票機（可刷西瓜卡或付現）直接買 <strong>「往復（來回票 950 円）」</strong>。去程拿著車票走右側 <strong>雙人吊椅（エコーリフト / Eco Lift）</strong> 剪票上山（約 <strong>12 分鐘</strong>，穿梭紅葉樹梢）；抵達半山腰後步行參拜藥王院並攻頂高尾山山頂（約 <strong>35–45 分鐘</strong>）；下山時至山頂纜車站拿出同一張車票的「回程聯」，改搭 <strong>纜車（ケーブルカー / Cable Car）</strong> <strong>6 分鐘</strong> 快速下山！</li>
+          <li><strong>套票價格與優惠</strong>：在<strong>京王線新宿站自動售票機</strong>點選「おトクなきっぷ ➔ 高尾山きっぷ」，成人約 <strong>¥1,480／人</strong>（含「新宿 ⇄ 高尾山口」京王線來回車票 ＋ 高尾山登山吊椅／纜車來回票；若分開單買需 ¥852＋¥950＝¥1,802，直接現省約 ¥320／人，限當日來回使用）。</li>
+          <li><strong>怎麼混搭搭乘（吊椅上、纜車下）</strong>：去程走右側 <strong>吊椅（エコーリフト）乘車口</strong> 剪票上山（約 12 分鐘，穿梭紅葉樹梢）；抵達半山腰後步行參拜藥王院並攻頂山頂（約 35～45 分鐘）；下山時至山頂纜車站拿出同一張套票的「回程聯」，改搭 <strong>纜車（ケーブルカー）</strong> 6 分鐘快速下山。</li>
         </ul>
       </div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Takao+Tozan+Railway+Sanroku+Station" target="_blank" rel="noopener">📍 高尾山登山吊椅／纜車山麓站</a>
-      </div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag shop">15:45</span>
-      <div class="title-line">下午回程抵達澀谷逛街：優先衝 Stüssy Shibuya Chapter（⚠️ 注意營業時間！）</div>
-      <div class="desc">約 <strong>14:45</strong> 從高尾山口站搭京王線回程（於明大前站轉乘京王井之頭線直達澀谷，車程約 <strong>50 分鐘</strong>），<strong>15:45</strong> 抵達澀谷開始下午逛街時段。</div>
+      <span class="time-tag food">13:15</span>
+      <div class="title-line">高尾山午餐選項（13:15 後剛好避開正午排隊尖峰！）</div>
+      <ul class="clean">
+        <li><strong>山頂／半山腰路線</strong>：<strong>曙亭</strong>（山頂老字號，招牌山菜與山藥泥蕎麥麵）、<strong>十一丁目茶屋</strong>（纜車高尾山站旁百年茶屋，露台視野佳）、<strong>高尾山 SUMIKA</strong>（纜車站旁新設施，1F 蕎麥麵與現烤天狗燒、2F 景觀餐飲）。</li>
+        <li><strong>下山後山麓路線（推薦！約 14:15 下山人潮少很多）</strong>：<strong>高尾山 高橋家</strong>（江戶時代創業名店，招牌「山藥泥蕎麥麵」滑順好入口，週四公休、12/01 週二正常營業）、<strong>榮茶屋</strong>（山麓坡道老店，主打香氣濃郁的自然薯蕎麥麵）。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=高尾山+曙亭" target="_blank" rel="noopener noreferrer">📍 高尾山 曙亭</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=十一丁目茶屋+高尾山" target="_blank" rel="noopener noreferrer">📍 十一丁目茶屋</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=高尾山+SUMIKA" target="_blank" rel="noopener noreferrer">📍 高尾山 SUMIKA</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=高尾山+高橋家" target="_blank" rel="noopener noreferrer">📍 高尾山 高橋家</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=高尾山+栄茶屋" target="_blank" rel="noopener noreferrer">📍 高尾山 榮茶屋</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag shop">17:10</span>
+      <div class="title-line">下午回程澀谷逛街：Stüssy ＆ Supreme ＆ NEIGHBORHOOD ＆ 鬼塚虎 ＆ UNIQLO</div>
+      <div class="desc">約 <strong>16:15</strong> 從高尾山口站搭京王線回程（明大前站轉乘京王井之頭線直達澀谷，約 50 分鐘），<strong>17:10</strong> 抵達澀谷「神南潮流一級戰區」開始逛街（各店彼此相距僅 1～5 分鐘步程）：</div>
       <div class="alert-box">
-        <strong>⏰ 營業時間提醒：</strong><strong>Stüssy Shibuya Chapter（澀谷神南 1 丁目）</strong>每日營業時間為 <strong>11:00–20:00</strong>！請務必在 <strong>20:00 打烊前</strong> 先去逛（建議一抵達澀谷就優先前往，避免晚餐後關門或熱門尺寸售完；結帳攜帶實體護照可詢問免稅）。
+        <strong>⏰ 營業時間與神南潮牌一條街順序提醒（多數 20:00 打烊，建議抵達先逛！）：</strong>
+        <ul class="clean">
+          <li><strong>1. Stüssy Shibuya Chapter（神南 1-14-5）</strong>：每日 <strong>11:00–20:00</strong>，熱門限定款易完售，抵達澀谷建議第一站先衝！</li>
+          <li><strong>2. Supreme Shibuya（神南 1-18-2 2F）</strong>：每日 <strong>11:00–20:00</strong>，就在 Stüssy 步行 1 分鐘旁，美式街頭潮流指標旗艦店。</li>
+          <li><strong>3. NEIGHBORHOOD Shibuya（神南 1-8-13）</strong>：每日 <strong>12:00–20:00</strong>，日系美式重機工裝神牌（同棟/周邊順路可看 <strong>WTAPS / HOODS</strong> 軍事工裝）。</li>
+          <li><strong>4. 其他順路必逛潮牌</strong>：<strong>HUMAN MADE SHIBUYA PARCO（澀谷 PARCO 1F，11:00–21:00）</strong>、<strong>BAPE STORE 澀谷（宇田川町，11:00–20:00）</strong>、<strong>KITH TOKYO（宮下公園 MIYASHITA PARK 1F，11:00–21:00）</strong>。</li>
+          <li><strong>5. Onitsuka Tiger 鬼塚虎 澀谷旗艦店（神南 1-21-3）</strong>：每日 <strong>11:00–20:00</strong>，兩層樓鞋款最齊全（帶實體護照登記免稅）。</li>
+          <li><strong>6. UNIQLO 澀谷道玄坂店</strong>：每日 <strong>10:00–21:00</strong>，最後一站補買發熱衣與輕暖外套。</li>
+        </ul>
       </div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Stussy+Shibuya+Chapter" target="_blank" rel="noopener">📍 Stüssy Shibuya Chapter</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Stussy+Shibuya+Chapter" target="_blank" rel="noopener noreferrer">📍 Stüssy Shibuya</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Supreme+Shibuya" target="_blank" rel="noopener noreferrer">📍 Supreme Shibuya</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=NEIGHBORHOOD+Shibuya" target="_blank" rel="noopener noreferrer">📍 NEIGHBORHOOD Shibuya</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=HUMAN+MADE+SHIBUYA+PARCO" target="_blank" rel="noopener noreferrer">📍 HUMAN MADE PARCO</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=BAPE+STORE+Shibuya" target="_blank" rel="noopener noreferrer">📍 BAPE STORE 澀谷</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=KITH+TOKYO+Miyashita+Park" target="_blank" rel="noopener noreferrer">📍 KITH TOKYO</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Onitsuka+Tiger+Shibuya" target="_blank" rel="noopener noreferrer">📍 鬼塚虎 澀谷店</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag food">18:30</span>
+      <span class="time-tag food">19:00</span>
       <div class="title-line">晚餐：澀谷人氣平價烏龍麵 3 選 1</div>
       <ul class="clean">
         <li><strong>香川一福 澀谷（Kagawa Ippuku）</strong>：米其林必比登推介讚岐手打烏龍麵（營業至 22:00），清爽彈牙、長輩無負擔。</li>
         <li><strong>山下本氣烏龍麵（並木橋店 / 道玄坂店）</strong>：招牌白明太子起司奶油烏龍麵與現炸雞天婦羅（營業至 23:00），設有舒適桌席。</li>
-        <li><strong>つるとんたん（TsuruTonTan）澀谷店（Scramble Square 13F）</strong>：大碗公精緻烏龍麵（營業至 23:00），<strong>免費加麵 1–3 球不加價</strong>，吃完搭銀座線免轉車回三越前站。</li>
+        <li><strong>つるとんたん（TsuruTonTan）澀谷店（Scramble Square 13F）</strong>：大碗公精緻烏龍麵（營業至 23:00），<strong>免費加麵 1～3 球不加價</strong>，吃完搭銀座線免轉車回三越前站。</li>
       </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=香川一福+渋谷" target="_blank" rel="noopener">📍 香川一福 澀谷</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=山下本氣烏龍麵+澀谷並木橋店" target="_blank" rel="noopener">📍 山下本氣烏龍麵</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=TsuruTonTan+UDON+NOODLE+Brasserie+SHIBUYA" target="_blank" rel="noopener">📍 つるとんたん 澀谷店</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=香川一福+渋谷" target="_blank" rel="noopener noreferrer">📍 香川一福 澀谷</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=山下本気うどん+渋谷" target="_blank" rel="noopener noreferrer">📍 山下本氣烏龍麵 澀谷</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=つるとんたん+渋谷店" target="_blank" rel="noopener noreferrer">📍 つるとんたん 澀谷店</a>
     </div>
   </div>
 </section>
@@ -577,51 +461,65 @@
 <!-- DAY 4 -->
 <section id="d4" class="section">
   <div class="card">
-    <h2>Day 4｜12/02 (週三) 青山藍瓶 ➔ 外苑銀杏 ➔ 13:00 和牛鍋 ➔ 入鹿拉麵</h2>
-
+    <h2>Day 4｜12/02 (週三) 09:30 出發 ➔ 外苑銀杏大道 ➔ 新宿和牛鍋＆御苑 ➔ 明治神宮＆原宿潮牌 ➔ 六本木拉麵</h2>
     <div class="time-item">
-      <span class="time-tag food">08:30</span>
-      <div class="title-line">早餐：藍瓶咖啡 青山店（Blue Bottle Coffee Aoyama）</div>
-      <div class="desc"><strong>08:00 營業</strong>，二樓綠意露台享用現烤列日鬆餅與單品手沖拿鐵，吃飽再出發賞銀杏。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Blue+Bottle+Coffee+Aoyama+Cafe" target="_blank" rel="noopener">📍 藍瓶咖啡 青山店</a>
-      </div>
+      <span class="time-tag">09:30</span>
+      <div class="title-line">從日本橋飯店出發（搭銀座線免轉車直達「外苑前站」）</div>
+      <div class="desc">從日本橋／三越前站搭銀座線直達外苑前站（車程約 17 分鐘），出站步行 3 分鐘即達外苑銀杏大道入口。</div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag">09:45</span>
-      <div class="title-line">明治神宮外苑銀杏大道（步行約 17 分鐘）</div>
-      <div class="desc">上午光線最柔和，散步 300 公尺金黃銀杏林道拍照。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Gaien+Ginkgo+Avenue" target="_blank" rel="noopener">📍 明治神宮外苑銀杏林</a>
-      </div>
+      <span class="time-tag">09:50</span>
+      <div class="title-line">第一站：明治神宮外苑銀杏大道（Jingu Gaien Ginkgo Avenue）</div>
+      <div class="desc">抵達後<strong>先逛銀杏大道</strong>！早上陽光斜射在 300 公尺雙排金黃銀杏樹上最美、人潮也最少，拍完照可在銀杏大道旁享用早午餐或咖啡點心：</div>
+      <ul class="clean">
+        <li><strong>BLUE SIX COFFEE（都立明治公園 D 棟）</strong>：緊鄰外苑銀杏大道，提供手沖咖啡、抹茶拿鐵、洋甘菊薑茶與希臘優格碗、鮪魚融化三明治。</li>
+        <li><strong>i2 cafe（南青山 3 丁目）</strong>：外苑前站步行 5 分鐘，提供南非國寶水果茶、鮮榨果汁與 08:00–11:00 晨間拼盤（約 ¥1,000）。</li>
+        <li><strong>SHAKE SHACK 外苑銀杏大道店</strong>：就在銀杏大道樹蔭下（11:00 營業，適合拍完銀杏順便點漢堡奶昔）。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Gaien+Ginkgo+Avenue" target="_blank" rel="noopener noreferrer">📍 明治神宮外苑銀杏大道</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=BLUE+SIX+COFFEE+Meiji+Park" target="_blank" rel="noopener noreferrer">📍 BLUE SIX COFFEE</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=i2+cafe+Minamiaoyama" target="_blank" rel="noopener noreferrer">📍 i2 cafe</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag food">13:00</span>
-      <div class="title-line">午餐：Shabushabu Niimura（新宿和牛涮涮鍋）</div>
-      <div class="desc">從外苑前搭地鐵至新宿，<strong>13:00</strong> 避開正午尖峰，享用超值午間黑毛和牛涮涮鍋套餐，肉質軟嫩暖胃。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shabushabu+Niimura+Shinjuku" target="_blank" rel="noopener">📍 Shabushabu Niimura</a>
-      </div>
+      <span class="time-tag food">12:00</span>
+      <div class="title-line">第二站（往上至新宿）：午餐 Shabushabu Niimura（新宿和牛涮涮鍋）</div>
+      <div class="desc">從青山一丁目站／外苑前站往北搭地鐵前往新宿（車程約 10～15 分鐘），享用超值午間黑毛和牛涮涮鍋套餐，肉質軟嫩暖胃。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shabushabu+Niimura+Shinjuku" target="_blank" rel="noopener noreferrer">📍 Shabushabu Niimura</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag">14:30</span>
-      <div class="title-line">新宿御苑賞楓散步（步行約 15 分鐘）</div>
-      <div class="desc">日式庭園與日本庭園紅葉極美，吃飽散步消化（注意 <strong>16:00 停止入園</strong>、16:30 閉園）。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" rel="noopener">📍 新宿御苑</a>
-      </div>
+      <span class="time-tag">13:30</span>
+      <div class="title-line">新宿御苑賞楓散步（從餐廳步行 15 分鐘，順向往千駄谷／原宿方向）</div>
+      <div class="desc">午餐後進新宿御苑消化散步、欣賞日式庭園紅葉（下午 13:30–14:45 陽光正好，注意 16:00 停止入園）。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" rel="noopener noreferrer">📍 新宿御苑</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag food">17:15</span>
+      <span class="time-tag">15:00</span>
+      <div class="title-line">第三站（往下回原宿）：明治神宮參拜（從新宿搭 JR 山手線 2 站至原宿站，僅 4 分鐘）</div>
+      <div class="desc">從原宿口進入明治神宮森林步道參拜（12 月關門時間約為 <strong>16:00 日落時分</strong>，15:00 入園參拜時間充裕且林間光影極有氛圍）。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu" target="_blank" rel="noopener noreferrer">📍 明治神宮</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag shop">16:00</span>
+      <div class="title-line">第四站（參拜完走下來）：原宿・表參道・貓街（Cat Street）潮牌店逛街</div>
+      <div class="desc">參拜完直接走下明治神宮正前方的原宿／表參道潮牌商圈（各店多營業至 <strong>20:00</strong>）：</div>
+      <ul class="clean">
+        <li><strong>A BATHING APE / BAPE STORE 原宿（神宮前 4-21-5）</strong>：原宿經典猿人頭旗艦店（11:00–20:00）。</li>
+        <li><strong>NEIGHBORHOOD 原宿（神宮前 4-32-7 神宮前藤井大樓 1F）</strong>：就在表參道與貓街交叉口旁，日系美式工裝旗艦店（12:00–20:00）。</li>
+        <li><strong>HUMAN MADE OFFLINE STORE（神宮前 2-6-6）</strong>：NIGO 主理超人氣潮牌旗艦店（11:00–19:00，⚠️ 注意 19:00 打烊，想買建議先逛這家！）。</li>
+        <li><strong>Supreme Harajuku（神宮前 4-32-7 2F）</strong>：與 NEIGHBORHOOD 原宿同棟 2 樓，一次逛齊最省力（11:00–20:00）。</li>
+        <li><strong>順路選物＆鞋款</strong>：<strong>表參道之丘（Omotesando Hills）</strong>、<strong>原宿 HARAKADO</strong>、<strong>Onitsuka Tiger 鬼塚虎 表參道旗艦店（11:00–20:00）</strong> 與 <strong>藍瓶咖啡 青山店</strong>。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=NEIGHBORHOOD+Harajuku" target="_blank" rel="noopener noreferrer">📍 NEIGHBORHOOD 原宿</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Supreme+Harajuku" target="_blank" rel="noopener noreferrer">📍 Supreme 原宿</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=HUMAN+MADE+OFFLINE+STORE" target="_blank" rel="noopener noreferrer">📍 HUMAN MADE 原宿</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=BAPE+STORE+Harajuku" target="_blank" rel="noopener noreferrer">📍 BAPE STORE 原宿</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Onitsuka+Tiger+Omotesando" target="_blank" rel="noopener noreferrer">📍 鬼塚虎 表參道店</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">18:15</span>
       <div class="title-line">晚餐：Iruca Tokyo Roppongi（入鹿 TOKYO 六本木）</div>
-      <div class="desc">從新宿搭都營大江戶線直達六本木站（<strong>車程僅 14 分鐘</strong>），週三正常營業至 <strong>19:40</strong>，17:15 抵達可避開尖峰排隊，必點牛肝菌醬油拉麵與柚子鹽拉麵。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Iruca+Tokyo+Roppongi" target="_blank" rel="noopener">📍 入鹿 TOKYO 六本木</a>
-      </div>
+      <div class="desc">逛完原宿／表參道後，從表參道站／乃木坂站搭千代田線或日比谷線前往六本木（車程約 10 分鐘），週三正常營業至 19:40，必點牛肝菌醬油拉麵與柚子鹽拉麵。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Iruca+Tokyo+Roppongi" target="_blank" rel="noopener noreferrer">📍 入鹿 TOKYO 六本木</a>
     </div>
   </div>
 </section>
@@ -629,47 +527,45 @@
 <!-- DAY 5 -->
 <section id="d5" class="section">
   <div class="card">
-    <h2>Day 5｜12/03 (週四) 內神田無煙喫茶 ➔ 鎌倉古都 ➔ 橫濱紅磚倉庫聖誕市集</h2>
-
+    <h2>Day 5｜12/03 (週四) 09:30 出發 ➔ 內神田無煙喫茶 ➔ 鎌倉古都 ➔ 橫濱紅磚倉庫聖誕市集</h2>
     <div class="time-item">
-      <span class="time-tag food">07:30</span>
-      <div class="title-line">早餐：斎藤コーヒー店 內神田店（1 樓全席禁菸・樓層完全隔離）</div>
-      <div class="desc">飯店往北步行僅 <strong>5 分鐘（350m）</strong>，07:30 開門（1 樓全席禁菸、2 樓吸菸區完全隔離），吃完走 <strong>2 分鐘（160m）</strong> 即達 JR 神田站西口出發往鎌倉。</div>
+      <span class="time-tag food">09:30</span>
+      <div class="title-line">從飯店出發 ➔ 09:35 早餐：斎藤コーヒー店 內神田店（1 樓全席禁菸・樓層完全隔離）</div>
+      <div class="desc">飯店往北步行僅 <strong>5 分鐘（350m）</strong>，吃完走 <strong>2 分鐘（160m）</strong> 即達 JR 神田站西口出發往鎌倉。</div>
       <span class="pill food">必點：手沖招牌綜合咖啡</span>
       <span class="pill food">厚片奶油吐司早餐組（附水煮蛋）</span>
       <span class="pill food">火腿蛋三明治＆昭和手工布丁</span>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Saito+Coffee+Uchikanda" target="_blank" rel="noopener">📍 斎藤コーヒー店 內神田店</a>
-      </div>
+      <br><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Saito+Coffee+Uchikanda" target="_blank" rel="noopener noreferrer">📍 斎藤コーヒー店 內神田店</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag">09:15</span>
-      <div class="title-line">北鎌倉圓覺寺 ➔ 鶴岡八幡宮 ➔ 小町通散步</div>
-      <div class="desc">JR 神田站搭山手線至新橋轉橫須賀線直達北鎌倉，參拜圓覺寺賞楓後順向一路往鎌倉站逛鶴岡八幡宮與小町通。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Engaku-ji+Kamakura" target="_blank" rel="noopener">📍 北鎌倉 圓覺寺</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Tsurugaoka+Hachimangu" target="_blank" rel="noopener">📍 鶴岡八幡宮</a>
-      </div>
+      <span class="time-tag">10:30</span>
+      <div class="title-line">JR 神田站出發 ➔ 北鎌倉 圓覺寺 ➔ 鶴岡八幡宮 ➔ 小町通散步</div>
+      <div class="desc">JR 神田站搭山手線至新橋轉橫須賀線直達北鎌倉（車程約 55 分鐘），順向一路往鎌倉站逛古都與紅葉。</div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag">13:30</span>
+      <span class="time-tag food">13:30</span>
+      <div class="title-line">鎌倉在地特色午餐 3 選 1</div>
+      <ul class="clean">
+        <li><strong>選項 1｜鎌倉吻仔魚丼・海鮮丼（しらす丼）</strong>：推薦 <strong>鎌倉 秋本</strong>（鎌倉站東口步行 1 分鐘，招牌「鎌倉丼」吻仔魚＋湘南蔬菜天婦羅定食）或 <strong>いなせ（Inase）</strong>，清爽鮮甜。</li>
+        <li><strong>選項 2｜日式咖哩飯（カレー）</strong>：推薦 <strong>キャラウェイ（Caraway）</strong>（小町通旁排隊老店，平價濃郁歐風咖哩）或 <strong>OXYMORON Komachi</strong>（日系香料肉末咖哩＋手工布丁）。</li>
+        <li><strong>選項 3｜現炊日式釜飯（釜めし）</strong>：推薦 <strong>鎌倉釜飯 かまかま本店</strong>（小町通內，現點現炊吻仔魚鮭魚卵釜飯，最後還能淋高湯變茶泡飯）。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kamakura+Akimoto" target="_blank" rel="noopener noreferrer">📍 鎌倉 秋本</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=いなせ+鎌倉" target="_blank" rel="noopener noreferrer">📍 いなせ 鎌倉</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Caraway+Kamakura" target="_blank" rel="noopener noreferrer">📍 キャラウェイ 鎌倉</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=OXYMORON+鎌倉" target="_blank" rel="noopener noreferrer">📍 OXYMORON 鎌倉</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kamakura+Kamameshi+Kamakama" target="_blank" rel="noopener noreferrer">📍 鎌倉釜飯 かまかま本店</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag">15:00</span>
       <div class="title-line">長谷寺觀音賞楓 ➔ 江之島海景夕陽</div>
-      <div class="desc">搭江之電前往長谷寺（見晴台眺望湘南海岸與紅葉），下午漫步江之島看富士山海景夕陽。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Hasedera+Temple+Kamakura" target="_blank" rel="noopener">📍 長谷寺</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Enoshima" target="_blank" rel="noopener">📍 江之島</a>
-      </div>
+      <div class="desc">搭江之電前往長谷寺（見晴台眺望湘南海岸），下午漫步江之島看富士山夕陽。</div>
     </div>
-
     <div class="time-item">
-      <span class="time-tag food">17:30</span>
+      <span class="time-tag food">18:00</span>
       <div class="title-line">橫濱紅磚倉庫聖誕市集 ＆ 港灣海景晚餐</div>
       <div class="desc">從江之島順路北上橫濱（馬車道站／日本大通站步行 6 分鐘），在巨型聖誕樹與紅磚倉庫市集享用熱紅酒、德國香腸、漢堡排與海景晚餐。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Yokohama+Red+Brick+Warehouse" target="_blank" rel="noopener">📍 橫濱紅磚倉庫聖誕市集</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=橫濱紅磚倉庫聖誕市集" target="_blank" rel="noopener noreferrer">📍 橫濱紅磚倉庫聖誕市集</a>
     </div>
   </div>
 </section>
@@ -677,52 +573,67 @@
 <!-- DAY 6 -->
 <section id="d6" class="section">
   <div class="card">
-    <h2>Day 6｜12/04 (週五) 淺草雷門 ➔ 爸爸 11:30 返台 ➔ 母子迴轉壽司與採買</h2>
-
+    <h2>Day 6｜12/04 (週五) 09:30 出發 ➔ 淺草雷門 ➔ 爸爸 11:30 返台 ➔ 道具街＆阿美橫町晚餐</h2>
     <div class="time-item">
-      <span class="time-tag food">08:00</span>
-      <div class="title-line">早餐 ➔ 淺草寺・雷門 ＆ 仲見世通（行李先放飯店即可！）</div>
-      <div class="desc"><strong>💡 爸爸不用早上拖行李出門：</strong>從日本橋搭都營淺草線直達淺草站僅 <strong>8 分鐘</strong>，爸爸早上把行李寄放在 AIMA Nihonbashi 即可，三人輕鬆一起吃早餐、趁上午旅行團湧入前與雷門大燈籠合影、參拜淺草寺。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Senso-ji+Kaminarimon" target="_blank" rel="noopener">📍 淺草寺 雷門</a>
-      </div>
+      <span class="time-tag food">09:30</span>
+      <div class="title-line">09:30 出門 ➔ 淺草寺・雷門 ＆ 仲見世通（爸爸早上不需拖行李！）</div>
+      <div class="desc">爸爸早上行李先寄放飯店即可，09:30 一起搭都營淺草線直達淺草站（車程僅 <strong>8 分鐘</strong>，09:45 即達雷門），散步拍照並順買壽々喜園抹茶或淺草點心。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=淺草寺+雷門" target="_blank" rel="noopener noreferrer">📍 淺草寺 雷門</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=壽々喜園+淺草本店" target="_blank" rel="noopener noreferrer">📍 壽々喜園 淺草本店</a>
     </div>
-
     <div class="time-item">
       <span class="time-tag alert">11:30</span>
-      <div class="title-line">【重要撤離點】爸爸回飯店領行李前往成田機場（15:40 班機）</div>
+      <div class="title-line">【重要撤離點】11:00 爸爸回飯店領行李 ➔ 11:30 前往成田機場</div>
       <div class="alert-box">
-        逛完淺草雷門後，爸爸約 <strong>10:45–11:00</strong> 先行搭都營淺草線（<strong>8 分鐘直達</strong>）回 AIMA Nihonbashi 領取行李（免費寄放、完全不用在車站找大型置物櫃，也不需跟著逛道具街），並於最晚 <strong>11:30</strong> 從日本橋站搭乘京成 Access 特急直通列車（或至東京車站搭 N'EX）前往成田機場，從容趕 <strong>15:40</strong> 起飛班機。
-      </div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=AIMA+Nihonbashi" target="_blank" rel="noopener">📍 返回 AIMA Nihonbashi</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Narita+International+Airport" target="_blank" rel="noopener">📍 成田國際機場 (NRT)</a>
+        逛完淺草雷門後，<strong>爸爸約 11:00 自己搭都營淺草線（直達僅 8 分鐘）回 AIMA Nihonbashi 領行李</strong>，最晚 <strong>11:30</strong> 從日本橋出發前往成田機場第 2 航廈（搭乘 <strong>15:40 星宇航空 JX803 商務艙</strong>，若爸爸有買免稅品記得先至海關機器掃描再託運行李）。
       </div>
     </div>
-
     <div class="time-item">
       <span class="time-tag food">12:15</span>
       <div class="title-line">母子午餐：在地高人氣迴轉壽司 3 選 1（非壽司郎）</div>
       <ul class="clean">
-        <li><strong>もり一 錦糸町テルミナ2店（JR 錦糸町站共構・11:00 營業）</strong>：職人赤醋飯均一價迴轉壽司，出站即達，吃完直接逛對面 Yodobashi 電器城。</li>
-        <li><strong>三浦三崎港 上野店（10:30 營業）</strong>：阿美橫町入口旁，主打豪邁「山盛」鮪魚泥與黑鮪魚中腹。</li>
+        <li><strong>三浦三崎港 上野店（10:30 營業）</strong>：阿美橫町入口旁，主打豪邁「山盛」鮪魚泥與黑鮪魚中腹，吃完直接散步去合羽橋道具街最順路！</li>
         <li><strong>まぐろ問屋 恵み 上野廣小路店（11:30 營業）</strong>：上野松坂屋對面，鮪魚批發商直營，座位寬敞舒適。</li>
+        <li><strong>もり一 錦糸町テルミナ2店（JR 錦糸町站共構 11:00 營業）</strong>：職人赤醋飯均一價迴轉壽司，同棟有大型 <strong>UNIQLO</strong> 與 Yodobashi 電器城（吃完搭總武線至淺草橋/銀座線至田原町即可到合羽橋）。</li>
       </ul>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=もり一+錦糸町テルミナ2店" target="_blank" rel="noopener">📍 もり一 錦糸町</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=三浦三崎港+上野店" target="_blank" rel="noopener">📍 三浦三崎港 上野店</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=まぐろ問屋+恵み+上野広小路店" target="_blank" rel="noopener">📍 まぐろ問屋 恵み</a>
-      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=三浦三崎港+上野店" target="_blank" rel="noopener noreferrer">📍 三浦三崎港 上野店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=まぐろ問屋+恵み+上野広小路店" target="_blank" rel="noopener noreferrer">📍 まぐろ問屋 恵み 上野廣小路店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=もり一+錦糸町テルミナ2店" target="_blank" rel="noopener noreferrer">📍 もり一 錦糸町テルミナ2店</a>
     </div>
-
     <div class="time-item">
-      <span class="time-tag shop">14:30</span>
-      <div class="title-line">錦糸町 Yodobashi 電器採買 ＆ 上野阿美橫町藥妝伴手禮</div>
-      <div class="desc">下午你與媽媽於錦糸町 Yodobashi Camera 採買美容家電，接著到上野阿美橫町 OS Drug / 松本清補齊藥妝與二木的菓子伴手禮。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+Multimedia+Kinshicho" target="_blank" rel="noopener">📍 錦糸町 Yodobashi</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+District" target="_blank" rel="noopener">📍 上野阿美橫町</a>
-      </div>
+      <span class="time-tag shop">14:00</span>
+      <div class="title-line">合羽橋道具街（Kappabashi Kitchen Street）料理道具採買</div>
+      <div class="desc">合羽橋道具街就在<strong>上野與淺草正中間</strong>（銀座線田原町站或稻荷町站步行 5 分鐘），全長約 800 公尺集結超過 170 間料理道具專賣店（多數營業至 <strong>17:00</strong>，14:00–16:00 逛最充裕）：</div>
+      <ul class="clean">
+        <li><strong>必逛推薦</strong>：日本職人廚刀（<strong>釜淺商店、鍔屋 Tsubaya</strong>，可現場免費刻名字）、美濃燒／有田燒陶瓷餐盤碗碟、木製托盤與漆器、咖啡手沖濾杯、銅製玉子燒鍋與烘焙模具。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=合羽橋道具街" target="_blank" rel="noopener noreferrer">📍 合羽橋道具街</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kama-Asa+Kappabashi" target="_blank" rel="noopener noreferrer">📍 釜淺商店（廚刀）</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag shop">16:00</span>
+      <div class="title-line">逛上野阿美橫町（Ameyoko）：藥妝、零食伴手禮＆鬼塚虎補貨</div>
+      <div class="desc">從合羽橋道具街往西散步約 10 分鐘即達上野阿美橫町商圈，輕鬆逛街採買：</div>
+      <ul class="clean">
+        <li><strong>藥妝採買</strong>：<strong>OS Drug 上野店</strong>（現金批發超低價、免辦退稅手續最快速）與 <strong>松本清 阿美橫町店</strong>（品項齊全可辦退稅）。</li>
+        <li><strong>零食乾貨＆玩具</strong>：<strong>二木的菓子（Niki's Confectionery）</strong> 一次買齊平價日本零食伴手禮，以及上野站前 <strong>Yamashiroya</strong> 6 層樓玩具扭蛋百貨。</li>
+        <li><strong>鞋款補貨</strong>：<strong>Onitsuka Tiger 鬼塚虎 上野廣小路店</strong>（每日 <strong>11:00–20:00</strong>，就在阿美橫町南側入口旁）。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=上野阿美橫町" target="_blank" rel="noopener noreferrer">📍 上野阿美橫町</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=二木の菓子+第一営業所+上野" target="_blank" rel="noopener noreferrer">📍 二木的菓子 上野</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Onitsuka+Tiger+上野広小路" target="_blank" rel="noopener noreferrer">📍 鬼塚虎 上野廣小路店</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">18:00</span>
+      <div class="title-line">晚餐：上野阿美橫町周邊人氣名店 3 選 1（餐後搭銀座線/日比谷線直達回日本橋）</div>
+      <ul class="clean">
+        <li><strong>炸豬排 山家（とんかつ山家 上野店 / 御徒町店）</strong>：阿美橫町超高 CP 值排隊名店，現炸里肌豬排定食厚實多汁（約 ¥1,000～¥1,500），與媽媽用餐最滿足。</li>
+        <li><strong>伊豆榮 本店（Izuei Honten・上野公園旁步行 3 分鐘）</strong>：創業逾 260 年江戶前鰻魚飯老舖，蒲燒鰻魚鬆軟香濃、環境舒適優雅（適合帶媽媽悠閒吃大餐）。</li>
+        <li><strong>上野藪蕎麥（Ueno Yabu Soba・阿美橫町旁）</strong>：明治 25 年創業百年蕎麥麵名店，手打蕎麥麵與炸蝦天婦羅清爽無負擔，吃完從上野廣小路站／仲御徒町站搭地鐵 <strong>5 分鐘直達日本橋／人形町</strong>。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=とんかつ山家+上野店" target="_blank" rel="noopener noreferrer">📍 炸豬排 山家 上野店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=伊豆栄+本店+上野" target="_blank" rel="noopener noreferrer">📍 伊豆榮 本店（鰻魚飯）</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=上野藪そば" target="_blank" rel="noopener noreferrer">📍 上野藪蕎麥</a>
     </div>
   </div>
 </section>
@@ -730,178 +641,229 @@
 <!-- DAY 7 -->
 <section id="d7" class="section">
   <div class="card">
-    <h2>Day 7｜12/05 (週六) 母子返台日：築地／東京車站採買 ➔ 11:30 領行李往機場</h2>
-
+    <h2>Day 7｜12/05 (週六) 09:30 出發 ➔ 築地場外市場／豐洲市場 ➔ 市區景點＆最後採買</h2>
     <div class="time-item">
-      <span class="time-tag food">08:00</span>
-      <div class="title-line">早餐：築地場外市場海鮮丼／玉子燒 或 東京車站一番街採買</div>
-      <div class="desc">早上辦理退房並<strong>將行李寄放在 AIMA Nihonbashi 櫃台（不用拖行李逛築地）</strong>，先吃早餐再去採買！可搭日比谷線 10 分鐘至築地場外市場享用海鮮丼，或步行至東京車站一番街做最後伴手禮衝刺（NewYork Perfect Cheese、Press Butter Sand）。</div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market" target="_blank" rel="noopener">📍 築地場外市場</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station+First+Avenue" target="_blank" rel="noopener">📍 東京車站一番街</a>
-      </div>
+      <span class="time-tag food">09:30</span>
+      <div class="title-line">09:30 出門 ➔ 早上市場二選一（當天自由安排：築地場外市場 或 豐洲市場）</div>
+      <ul class="clean">
+        <li><strong>築地場外市場</strong>：從日本橋搭日比谷線直達築地站約 <strong>8 分鐘</strong>（09:45 即達）；街邊海鮮丼、玉子燒、現烤串物與抹茶拿鐵豐富，吃完走路 15 分鐘即可直接走進銀座。</li>
+        <li><strong>豐洲市場（含千客萬來）</strong>：搭地鐵轉百合海鷗線至市場前站約 <strong>25 分鐘</strong>（10:00 抵達千客萬來開門時間剛剛好！）；室內有冷暖氣不受天候影響。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market" target="_blank" rel="noopener noreferrer">📍 築地場外市場</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Toyosu+Market+Senkyaku+Banrai" target="_blank" rel="noopener noreferrer">📍 豐洲市場 千客萬來</a>
     </div>
+    <div class="time-item">
+      <span class="time-tag">12:00</span>
+      <div class="title-line">下午東京市區景點（依早市動線與體力自由搭配）</div>
+      <ul class="clean">
+        <li><strong>築地／銀座順路</strong>：築地本願寺、<strong>濱離宮恩賜庭園</strong>，或直接逛週六下午的<strong>銀座中央通步行者天國</strong>（12:00 起封街）。</li>
+        <li><strong>皇居／丸之內順路</strong>：<strong>皇居東御苑</strong>、<strong>丸之內仲通</strong>銀杏大道與白天聖誕燈飾。</li>
+      </ul>
+    </div>
+    <div class="time-item">
+      <span class="time-tag shop">14:30</span>
+      <div class="title-line">最終伴手禮＆戰利品採買衝刺（銀座 ➔ 東京車站一番街／大丸東京）</div>
+      <div class="desc">可逛 <strong>GINZA SIX</strong>、<strong>銀座三越／松屋銀座</strong>、<strong>銀座伊東屋</strong> 與 <strong>UNIQLO 銀座旗艦店</strong>；回日本橋途中順路到 <strong>東京站一番街（TOKYO GIFT PALETTE / 東京甜點樂園）</strong> 與 <strong>大丸東京店 B1/1F</strong> 補齊伴手禮並辦理免稅登記（記得帶實體護照未稅滿 5,000 日圓），晚上回飯店整理行李（<strong>欲申請退稅的商品請勿在飯店拆封或食用，且含液體免稅品請集中放行李箱最上層以便機場海關查驗</strong>）。</div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=GINZA+SIX" target="_blank" rel="noopener noreferrer">📍 GINZA SIX</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Daimaru+Tokyo" target="_blank" rel="noopener noreferrer">📍 大丸東京店</a>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">18:30</span>
+      <div class="title-line">晚餐：銀座名店炸豬排收尾大餐</div>
+      <ul class="clean">
+        <li><strong>銀座梅林（Ginza Bairin）</strong>：銀座老字號炸豬排元祖名店，招牌黑豚炸豬排與滑蛋豬排丼溫潤好入口。</li>
+        <li><strong>とんかつ檍 銀座店（Tonkatsu Aoki Ginza）</strong>：使用林SPF豚肉厚切現炸，外酥內嫩多汁（建議 18:00 前提早排隊）。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=銀座梅林" target="_blank" rel="noopener noreferrer">📍 銀座梅林</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=とんかつ檍+銀座店" target="_blank" rel="noopener noreferrer">📍 とんかつ檍 銀座店</a>
+    </div>
+  </div>
+</section>
 
+<!-- DAY 8 -->
+<section id="d8" class="section">
+  <div class="card">
+    <h2>Day 8｜12/06 (週日) 09:30 出發 ➔ 清澄白河咖啡散步＆清澄庭園 ➔ 11:30 返台日</h2>
+    <div class="time-item">
+      <span class="time-tag">09:30</span>
+      <div class="title-line">09:30 退房寄放行李於櫃台 ➔ 搭地鐵 5 分鐘前往「清澄白河」（不用拖行李！）</div>
+      <div class="desc">早上睡飽後 09:30 在 <strong>AIMA Nihonbashi</strong> 櫃台寄放行李，從水天宮前站／人形町站搭地鐵 1～2 站（僅約 5～8 分鐘）輕鬆抵達清澄白河站。</div>
+    </div>
+    <div class="time-item">
+      <span class="time-tag food">09:45</span>
+      <div class="title-line">清澄白河精品咖啡早餐 ＆ 清澄庭園冬季賞景（步行 15 分鐘繞園）</div>
+      <ul class="clean">
+        <li><strong>咖啡早餐推薦</strong>：<strong>藍瓶咖啡 清澄白河旗艦店（08:00 營業）</strong>、<strong>Allpress Espresso Tokyo Roastery（09:00 營業）</strong> 或 <strong>Fukadaso Cafe</strong>。</li>
+        <li><strong>清澄庭園（09:00 已開園）</strong>：江戶時代大名庭園，池泉迴遊式庭園與冬季殘楓倒影極為清幽，悠閒散步拍照約 25～30 分鐘剛剛好。</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kiyosumi+Garden" target="_blank" rel="noopener noreferrer">📍 清澄庭園</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Blue+Bottle+Coffee+Kiyosumi+Shirakawa" target="_blank" rel="noopener noreferrer">📍 藍瓶清澄白河店</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Allpress+Espresso+Tokyo+Roastery" target="_blank" rel="noopener noreferrer">📍 Allpress Espresso Tokyo Roastery</a>
+    </div>
     <div class="time-item">
       <span class="time-tag alert">11:30</span>
-      <div class="title-line">【重要撤離點】返回 AIMA Nihonbashi 領行李出發往成田機場</div>
+      <div class="title-line">【重要撤離點】11:00 回日本橋領行李 ➔ 11:30 出發往成田機場 T2</div>
       <div class="alert-box">
-        你與媽媽（母子）的班機於 <strong>15:20</strong> 起飛，請務必於 <strong>11:30 前</strong> 返回 AIMA Nihonbashi 領取行李並離開市區前往成田機場（預計 12:40 抵達航廈辦理退稅與航空櫃檯報到）。
-      </div>
-      <div class="map-btn-group">
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=AIMA+Nihonbashi" target="_blank" rel="noopener">📍 返回 AIMA Nihonbashi</a>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Narita+International+Airport" target="_blank" rel="noopener">📍 成田國際機場 (NRT)</a>
+        約 <strong>11:00</strong> 從清澄白河搭地鐵 5 分鐘回 <strong>AIMA Nihonbashi</strong> 領取寄放行李，務必於 <strong>11:30 前</strong> 出發前往成田機場第 2 航廈（搭乘 <strong>15:30 國泰航空 CX451</strong> 班機返台，預計 12:45 抵達航廈，<strong>請先至海關退稅機器掃描護照／VJW QR Code 完成查驗後再去航空公司櫃檯託運行李！</strong>）。
       </div>
     </div>
   </div>
 </section>
 
-<!-- SHOPPING & MATCHA (嚴格僅列行程有安排的站點) -->
+<!-- SHOPPING & MATCHA -->
 <section id="shop" class="section">
   <div class="card">
-    <h2>🛍️ 行程順路逛街與伴手禮精選攻略</h2>
+    <h2>🛍️ 行程順路逛街、鬼塚虎、UNIQLO 與伴手禮精選攻略</h2>
     <div class="tip-box">
-      <strong>💡 免稅小提醒：</strong>日本直營專賣店與百貨專櫃（如虎之門/麻布台各品牌、大丸東京店、丸之內店、Stüssy）消費未稅滿 <strong>5,000 日圓</strong>，結帳時出示<strong>實體護照</strong>皆可辦理 10% 免稅！
+      <strong>💡 2026/11/01 免稅新制提醒：</strong>日本直營專賣店與百貨專櫃（虎之門/麻布台各品牌、大丸東京店、丸之內店、Stüssy、鬼塚虎、UNIQLO）消費未稅滿 <strong>5,000 日圓</strong>，結帳時出示<strong>實體護照</strong>先付含稅金額並登記免稅資料，離境時於機場海關核驗後退款（詳細平台分類請見最後一個分頁<strong>「🛂 2026退稅攻略」</strong>）。
     </div>
 
-    <h3>1. Day 2（11/30）虎之門之丘（Toranomon Hills Station Tower）</h3>
+    <h3>1. 鬼塚虎 Onitsuka Tiger ＆ UNIQLO 行程順路分店總整理</h3>
     <div class="brand-grid">
       <div class="brand-item">
-        <div>
-          <strong>SELECT by BAYCREW'S（2F–3F）</strong>
-          <span>BAYCREW'S 集團旗艦概念店，集結日系男女裝、古著、Eyevan 眼鏡與生活選物。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Toranomon+Hills+Station+Tower" target="_blank" rel="noopener">📍 虎之門之丘</a>
-        </div>
+        <strong>Stüssy Shibuya Chapter（Day 3 澀谷神南）</strong>
+        <span>每日 <strong>11:00–20:00</strong>（⚠️ 注意 20:00 打烊，建議下午回程一到澀谷就先逛），潮流服飾與日本限定款必看。</span>
       </div>
       <div class="brand-item">
-        <div>
-          <strong>中川政七商店 / BEAMS</strong>
-          <span>奈良百年工藝生活雜貨與日系經典服飾，免稅好買、人潮比新宿少非常多。</span>
-        </div>
+        <strong>Supreme Shibuya（Day 3 澀谷神南）</strong>
+        <span>每日 <strong>11:00–20:00</strong>（神南 1-18-2 2F），就在 Stüssy 旁步行 1 分鐘，潮流聯名配件與服飾指標店。</span>
       </div>
       <div class="brand-item">
-        <div>
-          <strong>T-MARKET（B2）</strong>
-          <span>27 間東京人氣甜點、麵包與精釀餐飲集結地，適合散步歇腳。</span>
-        </div>
+        <strong>NEIGHBORHOOD Shibuya ＆ WTAPS（Day 3 澀谷神南）</strong>
+        <span>每日 <strong>12:00–20:00</strong>（神南 1-8-13），日系美式重機工裝與線香座代表品牌，周邊可順逛 <strong>WTAPS（HOODS）</strong> 軍事工裝。</span>
+      </div>
+      <div class="brand-item">
+        <strong>HUMAN MADE / BAPE STORE / KITH TOKYO（Day 3 澀谷）</strong>
+        <span><strong>HUMAN MADE</strong>（澀谷 PARCO 1F，11:00–21:00）、<strong>BAPE STORE 澀谷</strong>（11:00–20:00）與 <strong>KITH TOKYO</strong>（宮下公園 1F，11:00–21:00）皆在神南步行圈內。</span>
       </div>
     </div>
 
-    <h3>2. Day 2（11/30）麻布台之丘（Azabudai Hills）</h3>
+    <h3>5. Day 6（12/04）合羽橋道具街（Kappabashi Kitchen Street）必買清單</h3>
     <div class="brand-grid">
       <div class="brand-item">
-        <div>
-          <strong>ÉCHIRÉ 艾許奶油（Garden Plaza B 1F）</strong>
-          <span>必買伴手禮！推薦鐵盒奶油餅乾、費南雪、瑪德蓮與麻布台限定甜點（建議中午前買）。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=ECHIRE+Mon+Marche+du+Beurre+Azabudai" target="_blank" rel="noopener">📍 ÉCHIRÉ 麻布台</a>
-        </div>
+        <strong>🔪 日本職人廚刀（釜淺商店 / 鍔屋 Tsubaya）</strong>
+        <span>三德刀、牛刀、水果刀款式極全，店員多通曉英文，現場購買多數可享<strong>免費雷射/手工刻名字服務</strong>（記得帶護照確認免稅門檻，刀具須放托運行李）。</span>
       </div>
       <div class="brand-item">
-        <div>
-          <strong>鈴懸 Suzukake（Market B1）</strong>
-          <span>福岡百年和菓子名店，招牌「鈴乃最中（鈴鐺餅）」與「鈴乃○餅（迷你銅鑼燒）」極受長輩喜愛。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Suzukake+Azabudai+Hills" target="_blank" rel="noopener">📍 鈴懸 麻布台</a>
-        </div>
+        <strong>🍽️ 美濃燒・有田燒陶瓷餐具（風和里 / 器良來）</strong>
+        <span>高質感日式飯碗、拉麵碗、豆皿小碟與茶杯，價格比百貨公司親民許多，店內皆會細心用氣泡紙包好方便帶回台灣。</span>
       </div>
       <div class="brand-item">
-        <div>
-          <strong>LE LABO / DIPTYQUE / Byredo</strong>
-          <span>Garden Plaza B 1F 免稅香氛一條街，東京限定 GAIAC 10 貨源相對齊全。</span>
-        </div>
-      </div>
-      <div class="brand-item">
-        <div>
-          <strong>大垣書店（Tower Plaza 4F）</strong>
-          <span>巨幅藝術牆與質感文具工藝選品，非常好逛好拍。</span>
-        </div>
-      </div>
-    </div>
-
-    <h3>3. Day 2（11/30）＆ Day 3（12/01）東京車站＆澀谷必買品牌</h3>
-    <div class="brand-grid">
-      <div class="brand-item">
-        <div>
-          <strong>砂糖樹 Sugar Butter Tree（大丸東京店 1F）</strong>
-          <span>每日 <strong>10:00–20:00</strong>，東京車站八重洲北口出站即達，品項最齊全且可辦理退稅，必買白巧克力夾心脆餅與限定口味。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Daimaru+Tokyo" target="_blank" rel="noopener">📍 大丸東京店 1F</a>
-        </div>
-      </div>
-      <div class="brand-item">
-        <div>
-          <strong>Aesop 新丸之內大樓店（東京車站丸之內北口）</strong>
-          <span>每日 11:00–21:00（週日/假日 11:00–20:00），就在東京車站聖誕市集旁，未稅滿 5,000 日圓憑護照免稅。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Aesop+Shin-Marunouchi+Building" target="_blank" rel="noopener">📍 Aesop 新丸之內店</a>
-        </div>
-      </div>
-      <div class="brand-item">
-        <div>
-          <strong>Stüssy Shibuya Chapter（Day 3 澀谷）</strong>
-          <span>每日 <strong>11:00–20:00</strong>（⚠️ 注意 20:00 打烊，建議下午回程一到澀谷就先逛），潮流服飾與限定款必看。</span>
-        </div>
-        <div class="map-btn-group">
-          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Stussy+Shibuya+Chapter" target="_blank" rel="noopener">📍 Stüssy Shibuya Chapter</a>
-        </div>
+        <strong>☕ 咖啡手沖器具＆烘焙模具（Union / 馬嶋屋菓子道具店）</strong>
+        <span>日本製手沖壺、濾杯、銅製玉子燒鍋與各式可愛餅乾/可麗露烘焙模具一次買齊（⚠️ 注意道具街多數店家 <strong>17:00 打烊</strong>，部分老店僅收現金）。</span>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h2>🍵 行程順路「現刷抹茶牛奶／抹茶拿鐵」推薦（僅列行程有安排的站點）</h2>
+    <h2>🍵 行程順路「現刷抹茶牛奶／抹茶拿鐵」推薦</h2>
     <ul class="clean">
-      <li>
-        <strong>Day 2（11/30 早上）Le Pain Quotidien 芝公園店</strong>：早餐可直接點熱抹茶拿鐵搭配米粉鮮奶油泡芙。
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Le+Pain+Quotidien+Shiba+Park" target="_blank" rel="noopener">📍 導航</a>
-      </li>
-      <li>
-        <strong>Day 2（11/30 下午）中村藤吉本店（麻布台之丘 Garden Plaza B 1F）</strong>：京都宇治百年老舖，現刷濃郁宇治抹茶牛奶與生茶果凍必吃！
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Azabudai" target="_blank" rel="noopener">📍 導航</a>
-      </li>
-      <li>
-        <strong>Day 4（12/02 上午）青山藍瓶咖啡 ＆ 表參道周邊</strong>：早上先喝青山藍瓶咖啡（供應熱抹茶拿鐵），逛完外苑銀杏往表參道方向也可順買現刷宇治抹茶拿鐵。
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Blue+Bottle+Coffee+Aoyama+Cafe" target="_blank" rel="noopener">📍 導航</a>
-      </li>
-      <li>
-        <strong>Day 5（12/03 中午）鎌倉茶々（小町通）</strong>：逛鎌倉小町通時可品嚐不同濃度的抹茶拿鐵與抹茶義式冰淇淋。
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Kamakura+Chacha+Komachi" target="_blank" rel="noopener">📍 導航</a>
-      </li>
-      <li>
-        <strong>Day 6（12/04 上午）壽々喜園 淺草本店</strong>：淺草寺後方世界最濃抹茶名店，也有濃醇抹茶拿鐵可外帶。
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Suzukien+Asakusa+Honten" target="_blank" rel="noopener">📍 導航</a>
-      </li>
+      <li><strong>Day 2（11/30 早上）Le Pain Quotidien 芝公園店</strong>：早餐可直接點熱抹茶拿鐵搭配米粉鮮奶油泡芙。</li>
+      <li><strong>Day 2（11/30 下午）中村藤吉本店（麻布台之丘 Garden Plaza B 1F）</strong>：京都宇治百年老舖，現刷濃郁宇治抹茶牛奶與生茶果凍必吃！</li>
+      <li><strong>Day 4（12/02 上午）BLUE SIX COFFEE（都立明治公園）</strong>：外苑前早餐備案直接有現點抹茶拿鐵。</li>
+      <li><strong>Day 5（12/03 中午）鎌倉茶々（小町通）</strong>：逛鎌倉小町通時可品嚐不同濃度的抹茶拿鐵與抹茶義式冰淇淋。</li>
+      <li><strong>Day 6（12/04 上午）壽々喜園 淺草本店</strong>：淺草寺後方世界最濃抹茶名店，也有濃醇抹茶拿鐵可外帶。</li>
     </ul>
+  </div>
+</section>
+
+<!-- TAX REFUND GUIDE 2026 -->
+<section id="tax" class="section">
+  <div class="card">
+    <h2>🛂 2026/11/01 日本退稅新制攻略（先付後退・機場核驗）</h2>
+    <div class="alert-box">
+      <strong>📢 2026 年 11 月 1 日起全面改制重點（出發前必讀！）：</strong>
+      <ul class="clean">
+        <li><strong>改為「先付含稅價、離境再退稅」</strong>：在市區商店結帳時須<strong>先支付含稅全額（10% 或 8%）</strong>，出示實體護照登記免稅紀錄後，於離境當天在<strong>成田機場通過海關確認</strong>後才會退還稅款（可選退回信用卡或機場領現金）。</li>
+        <li><strong>取消一般品／消耗品分類與密封袋</strong>：不再區分 50 萬日圓上限，也不再強制裝進透明防拆密封袋（<strong>但仍嚴禁在日本境內拆封使用或吃掉</strong>，尤其是栗子羊羹、砂糖樹、伴手禮餅乾，一旦被海關發現缺少或已拆封，整張收據都無法退稅！）。</li>
+        <li><strong>「單張收據審核制」</strong>：海關核驗以「整張收據」為單位，只要同一張收據裡少帶一件商品，整筆退稅資格都會被取消；同時免稅商店不再扣除手續費，理論上可拿回<strong>完整 10%（食品飲料 8%）稅額</strong>。</li>
+      </ul>
+    </div>
+
+    <h3>一、 行程購買店家所屬「退稅平台」分類總覽</h3>
+    <p class="desc">日本各百貨與品牌分別委託不同的退稅營運商（Tax-Free Operator）處理退款。建議在<strong>結帳當下就直接掃描收據上的 QR Code 綁定信用卡退刷</strong>，離境過海關後即自動退回原卡，免去在成田機場排現金櫃檯的時間！</p>
+
+    <div class="brand-grid">
+      <div class="brand-item">
+        <span class="platform-badge gb">平台 1｜Global Blue（環球藍聯）</span>
+        <strong>百貨公司＆大型電器城主力平台</strong>
+        <span>• <strong>適用店家</strong>：<strong>大丸東京店（砂糖樹、銀座あけぼの）</strong>、<strong>銀座三越 / 松屋銀座</strong>、<strong>Yodobashi 友都八喜（錦糸町）</strong>、以及部分國際精品旗艦店。<br>• <strong>操作方式</strong>：結帳後前往百貨退稅櫃檯（大丸東京或銀座三越）辦理免稅登記，取得 Global Blue 退稅單後，下載 <strong>Global Blue App</strong> 或掃描單據 QR Code 預先登記「信用卡自動退稅」，過海關確認後自動入帳。</span>
+      </div>
+
+      <div class="brand-item">
+        <span class="platform-badge jj">平台 2｜J-TaxRefund（J&amp;J Tax Free 網頁版）</span>
+        <strong>UNIQLO ＆ 各大連鎖藥妝店專用（免下載 App）</strong>
+        <span>• <strong>適用店家</strong>：<strong>UNIQLO 優衣庫（澀谷、新宿、錦糸町、銀座旗艦店）</strong>、<strong>松本清 / 鶴羽藥妝（上野阿美橫町）</strong>、唐吉訶德等。<br>• <strong>操作方式</strong>：在 UNIQLO 自助結帳機選「免稅」結帳後，帶著收據到店內「免稅專用機台」掃描護照與收據條碼，接著用手機掃描印出的 <strong>J-TaxRefund QR Code</strong>，直接在網頁輸入信用卡號完成登記（完全免下載 App）。</span>
+      </div>
+
+      <div class="brand-item">
+        <span class="platform-badge other">平台 3｜PIE VAT / JPrefund / VJW 系統</span>
+        <strong>潮流品牌、香氛選物＆複合商場</strong>
+        <span>• <strong>適用店家</strong>：<strong>鬼塚虎 Onitsuka Tiger（澀谷/上野）</strong>、<strong>Stüssy 澀谷</strong>、<strong>Aesop 新丸之內</strong>、<strong>虎之門之丘 / 麻布台之丘（ÉCHIRÉ、鈴懸、中村藤吉、香氛）/ GINZA SIX</strong>。<br>• <strong>操作方式</strong>：這類專賣店與新型商場多採用 <strong>PIE VAT</strong>、<strong>JPrefund</strong> 或直接連動 <strong>Visit Japan Web（VJW）免稅 QR Code</strong>；結帳時店員會給一張附有 QR Code 的退稅指引單，當場掃碼填入信用卡資訊即可。</span>
+      </div>
+
+      <div class="brand-item">
+        <span class="platform-badge other">⚠️ 特別留意｜無免稅或現金小店</span>
+        <strong>合羽橋道具街部分老店 ＆ 零食小舖</strong>
+        <span>• <strong>適用店家</strong>：<strong>合羽橋道具街（釜淺商店、鍔屋等大型廚刀店有免稅，但部分百年陶瓷小店僅收現金且無免稅）</strong>、<strong>OS Drug 藥妝（上野）</strong>（本身已是未稅批發價，不另辦退稅）、東京車站一番街部分單櫃。<br>• <strong>建議</strong>：凡可辦免稅的店家，結帳前先確認櫃台有「Japan Tax-Free Shop」標誌，並準備好<strong>實體護照正本</strong>（不接受翻拍照片）。</span>
+      </div>
+    </div>
+
+    <h3>二、 成田機場第 2 航廈（NRT T2）離境退稅 4 步驟 SOP</h3>
+    <div class="tax-box">
+      <strong>✈️ 爸爸（12/04 15:40 星宇 JX803）＆ 母子（12/06 15:30 國泰 CX451）共用流程：</strong>
+      <div class="time-item" style="margin-top:12px;">
+        <span class="time-tag tax">Step 1</span>
+        <div class="title-line">打包行李前：含液體免稅品放最上層、所有免稅品集中</div>
+        <div class="desc">化妝水、香氛、酒類、羊羹果凍等<strong>超過 100ml 的免稅品必須託運</strong>，請放在行李箱打開就看得到的最上層；隨身精品、手錶、3C 則放隨身登機包，以備海關抽查。</div>
+      </div>
+      <div class="time-item">
+        <span class="time-tag tax">Step 2</span>
+        <div class="title-line">【最關鍵！】先去海關退稅機台掃描，再去航空公司櫃檯託運</div>
+        <div class="desc">抵達成田機場第 2 航廈 3 樓出境大廳後，<strong>千萬不要先託運行李！</strong>先到海關退稅專用自助機台（或連上機場專用 Wi-Fi <code>Customs_WiFi_For_TaxRefund</code> 開啟 <code>jcustoms</code> 網頁）掃描<strong>實體護照</strong>（或 Visit Japan Web 退稅 QR Code）。</div>
+      </div>
+      <div class="time-item">
+        <span class="time-tag tax">Step 3</span>
+        <div class="title-line">螢幕顯示「綠燈」直接託運；顯示「紅燈」走海關櫃檯查驗</div>
+        <div class="desc">• <strong>綠燈（免查驗）</strong>：系統已完成海關確認，直接推行李去國泰／星宇櫃檯辦理報到與託運即可！<br>• <strong>紅燈（需人工核驗）</strong>：推著行李箱與隨身免稅品至旁邊海關人工查驗櫃檯，出示護照、收據與實體商品核對蓋章後，再去託運行李。</div>
+      </div>
+      <div class="time-item" style="margin-bottom:0;">
+        <span class="time-tag tax">Step 4</span>
+        <div class="title-line">通過安檢與出境審查後，等待信用卡入帳（或領現金）</div>
+        <div class="desc">只要在市區已透過 Global Blue / J-TaxRefund / PIE VAT 網頁登記好信用卡，海關確認通過後系統會自動啟動退刷（通常 1～4 週退回原信用卡）；若當初選領現金，則於出境審查後的退稅櫃檯領取日圓或外幣。</div>
+      </div>
+    </div>
   </div>
 </section>
 
 </main>
 
 <script>
+// Switch active itinerary or guide section and highlight the selected tab button.
 function showTab(id, btn) {
-  var sections = document.querySelectorAll('.section');
-  for (var i = 0; i < sections.length; i++) {
-    sections[i].classList.remove('active');
+  try {
+    var sections = document.querySelectorAll('.section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.remove('active');
+    }
+    var buttons = document.querySelectorAll('#navBar button');
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.remove('active');
+    }
+    var target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+    }
+    if (btn) {
+      btn.classList.add('active');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    var fallbackTarget = document.getElementById(id);
+    if (fallbackTarget) {
+      fallbackTarget.classList.add('active');
+    }
   }
-  var buttons = document.querySelectorAll('#navBar button');
-  for (var j = 0; j < buttons.length; j++) {
-    buttons[j].classList.remove('active');
-  }
-  var target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-  }
-  if (btn) {
-    btn.classList.add('active');
-  }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
